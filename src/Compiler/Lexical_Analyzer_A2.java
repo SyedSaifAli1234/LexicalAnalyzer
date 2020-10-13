@@ -143,7 +143,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"i\" ), ");
-                                myWriter2.write("(ID, \"i\" ), ");
+                                myWriter2.write("i");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -181,7 +182,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"in\" ), ");
-                                myWriter2.write("(ID, \"in\" ), ");
+                                myWriter2.write("in");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -430,7 +432,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"e\" ), ");
-                                myWriter2.write("(ID, \"e\" ), ");
+                                myWriter2.write("e");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -471,7 +474,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"el\" ), ");
-                                myWriter2.write("(ID, \"el\" ), ");
+                                myWriter2.write("el");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -511,7 +515,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"els\" ), ");
-                                myWriter2.write("(ID, \"els\" ), ");
+                                myWriter2.write("els");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -555,7 +560,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"w\" ), ");
-                                myWriter2.write("(ID, \"w\" ), ");
+                                myWriter2.write("w");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -595,7 +601,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"wh\" ), ");
-                                myWriter2.write("(ID, \"wh\" ), ");
+                                myWriter2.write("wh");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -635,7 +642,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"whi\" ), ");
-                                myWriter2.write("(ID, \"whi\" ), ");
+                                myWriter2.write("whi");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -675,7 +683,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"whil\" ), ");
-                                myWriter2.write("(ID, \"whil\" ), ");
+                                myWriter2.write("whil");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -715,7 +724,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"wr\" ), ");
-                                myWriter2.write("(ID, \"wr\" ), ");
+                                myWriter2.write("wr");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -754,7 +764,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"wri\" ), ");
-                                myWriter2.write("(ID, \"wri\" ), ");
+                                myWriter2.write("wri");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -794,7 +805,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"writ\" ), ");
-                                myWriter2.write("(ID, \"writ\" ), ");
+                                myWriter2.write("writ");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -833,7 +845,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"r\" ), ");
-                                myWriter2.write("(ID, \"r\" ), ");
+                                myWriter2.write("r");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -874,7 +887,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"re\" ), ");
-                                myWriter2.write("(ID, \"re\" ), ");
+                                myWriter2.write("re");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -914,7 +928,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"rea\" ), ");
-                                myWriter2.write("(ID, \"rea\" ), ");
+                                myWriter2.write("rea");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -954,7 +969,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"c\" ), ");
-                                myWriter2.write("(ID, \"c\" ), ");
+                                myWriter2.write("c");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -994,7 +1010,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"ch\" ), ");
-                                myWriter2.write("(ID, \"ch\" ), ");
+                                myWriter2.write("ch");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -1034,7 +1051,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write("(ID, \"cha\" ), ");
-                                myWriter2.write("(ID, \"cha\" ), ");
+                                myWriter2.write("cha");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -1133,7 +1151,8 @@ public class Lexical_Analyzer_A2 {
                             }
                             if (Character.isSpaceChar(character)){
                                 myWriter.write( "(ID, \" " + myStr + " \"), ");
-                                myWriter2.write( "(ID, \" " + myStr + " \"), ");
+                                myWriter2.write(""+myStr+"");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -1143,7 +1162,8 @@ public class Lexical_Analyzer_A2 {
                             else{//symbol
                                 //Function for symbols check
                                 myWriter.write( "(ID, \" " + myStr + " \"), ");
-                                myWriter2.write( "(ID, \" " + myStr + " \"), ");
+                                myWriter2.write( ""+myStr+"");
+                                myWriter2.write("\n");
                                 myStr.setLength(0);
                                 state = 0;
                                 Is_Symbol_after_letter = true;
@@ -1505,6 +1525,58 @@ public class Lexical_Analyzer_A2 {
             }
             myWriter.close();
             myWriter2.close();
+
+                    // PrintWriter object for output.txt
+                    PrintWriter pw = new PrintWriter("SecondFile.txt");
+
+                    // BufferedReader object for input.txt
+                    BufferedReader br1 = new BufferedReader(new FileReader("Second_File.txt"));
+
+                    String line1 = br1.readLine();
+
+                    // loop for each line of input.txt
+                    while(line1 != null)
+                    {
+                        boolean flag = false;
+
+                        // BufferedReader object for output.txt
+                        BufferedReader br3 = new BufferedReader(new FileReader("SecondFile.txt"));
+
+                        String line2 = br3.readLine();
+
+                        // loop for each line of output.txt
+                        while(line2 != null)
+                        {
+
+                            if(line1.equals(line2))
+                            {
+                                flag = true;
+                                break;
+                            }
+
+                            line2 = br3.readLine();
+
+                        }
+
+                        // if flag = false
+                        // write line of input.txt to output.txt
+                        if(!flag){
+                            pw.println(line1);
+
+                            // flushing is important here
+                            pw.flush();
+                        }
+
+                        line1 = br1.readLine();
+
+                    }
+
+                    // closing resources
+                    br1.close();
+                    pw.close();
+
+                    System.out.println("File operation performed successfully");
+
         } catch (IOException e) {
             e.printStackTrace();
         }
