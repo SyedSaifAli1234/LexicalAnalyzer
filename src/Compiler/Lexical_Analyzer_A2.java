@@ -28,7 +28,7 @@ public class Lexical_Analyzer_A2 {
             BufferedReader br2= new BufferedReader(fr2);
             StringBuilder myStr = new StringBuilder();
             StringBuilder mynum = new StringBuilder();
-            StringBuilder myRo = new StringBuilder();
+            char myRo = '0';
 
             state = 0;
             Boolean Is_Symbol_after_letter = false;
@@ -188,7 +188,7 @@ public class Lexical_Analyzer_A2 {
                             else{
                                 break;
                             }
-                        }//test
+                        }
 
                     case 4:    //We have IF
 
@@ -267,7 +267,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                System.out.println("( 'WHILE', ^ ),");
+                                System.out.println("( WHILE, ^ ),");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -303,7 +303,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                System.out.println("( 'WRITE', ^ ),");
+                                System.out.println("( WRITE, ^ ),");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -338,7 +338,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                System.out.println("( 'READ', ^ ), ");
+                                System.out.println("( READ, ^ ), ");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -1222,7 +1222,7 @@ public class Lexical_Analyzer_A2 {
                                     }
                                     else if (character == '"'){
                                         myStr.append(character);
-                                        System.out.println("( 'STRING', "+myStr+"), ");
+                                        System.out.println("( STRING, "+myStr+"), ");
                                         state = 0;
                                         break;
                                     }
@@ -1295,74 +1295,88 @@ public class Lexical_Analyzer_A2 {
                                 System.out.println("( '*', ^ ), ");
                                 state = 0;
                                 break;
+
                             case '<':                                        //Relational Operators
-                                c2 = br2.read();
-                                character2 = (char) c2;
-                                if(character2 == '='){
-                                    System.out.println("( '<=', ^ ), ");
-                                    br.read();
+
+                                if( Is_RO_found ){
+                                    Is_RO_found = false;
+
+                                    if(Character.compare(myRo, '<') == 0){
+                                        System.out.print("( '<<', ^), ");
+                                    }
+                                    else{
+                                        System.out.print("( SYNTAX ERROR, " + myRo + "<), ");
+                                    }
                                 }
-                                        /*else if(character2 == ','){
-                                             System.out.println("( '<', ^ ), ");
-                                             System.out.println("( ',', ^ ), ");
-                                             br.read();
-                                        }*/
-                                else {
-                                    System.out.println("( '<', ^ ), ");
+                                else{
+                                    Is_RO_found = true;
+                                    myRo = '<';
                                 }
                                 state = 0;
-                                br2=br;
                                 break;
 
                             case '>':
-                                br2=br;
-                                c2 = br2.read();
-                                character = (char) c2;
-                                if(character == '='){
-                                    System.out.println("( '>=', ^ ), ");
-                                    br.read();
+
+                                if( Is_RO_found ){
+                                    Is_RO_found = false;
+
+                                    if (Character.compare(myRo, '=') == 0 ){
+                                        System.out.print("( RO, GE), ");
+                                    }
+                                    else{
+                                        System.out.print("( SYNTAX ERROR, " + myRo + ">), ");
+                                    }
                                 }
-                                else if(character == ','){
-                                    System.out.println("( '>', ^ ), ");
-                                    System.out.println("( ',', ^ ), ");
-                                    br.read();
-                                }
-                                else if(character == '>'){
-                                    System.out.println("( '>>', ^ ), ");
-                                    br.read();
-                                }
-                                else {
-                                    System.out.println("( '>', ^ ), ");
+                                else{
+                                    Is_RO_found = true;
+                                    myRo = '>';
                                 }
                                 state = 0;
+
                                 break;
+
                             case '=':
-                                br2=br;
-                                c2 = br2.read();
-                                character = (char) c2;
-                                if(character == '='){
-                                    System.out.println("( '==', ^ ), ");
+
+                                if( Is_RO_found ){
+                                    Is_RO_found = false;
+
+                                    if (Character.compare(myRo, '=') == 0 ){
+                                        System.out.print("( RO, EQ), ");
+                                    }
+                                    else if (Character.compare(myRo, '<') == 0 ){
+                                        System.out.print("( RO, LE), ");
+                                    }
+                                    else if (Character.compare(myRo, '>') == 0 ){
+                                        System.out.print("( RO, GE), ");
+                                    }
+                                    else if (Character.compare(myRo, '!') == 0 ){
+                                        System.out.print("( RO, NE), ");
+                                    }
+                                    else{
+                                        System.out.print("( SYNTAX ERROR, " + myRo + "=), ");
+                                    }
+
                                 }
-                                else {
-                                    System.out.println("(Syntax Error, '=' cannot be understood), ");
+                                else{
+                                    Is_RO_found = true;
+                                    myRo = '=';
                                 }
                                 state = 0;
                                 break;
+
                             case '!':
-                                br2=br;
-                                c2 = br2.read();
-                                character = (char) c2;
-                                if(character == '='){
-                                    System.out.println("( '!=', ^ )");
+
+                                if( Is_RO_found ){
+
+                                    Is_RO_found = false;
+                                    System.out.print("( SYNTAX ERROR, " + myRo + "!), ");
                                 }
-                                else {
-                                    System.out.println("(Syntax Error, '!' cannot be understood), ");
+                                else{
+                                    Is_RO_found = true;
+                                    myRo = '!';
                                 }
                                 state = 0;
                                 break;
-
-
-
 
 
                             case '‘':
@@ -1400,6 +1414,10 @@ public class Lexical_Analyzer_A2 {
 
                                 break;
                             default:
+                                if( Is_RO_found ){
+                                    Is_RO_found = false;
+                                    System.out.print("( RO, " + myRo + " ), ");
+                                }
                                 state = 0;
 //                                           myStr.append(character);
                                 //Wrong symbol
