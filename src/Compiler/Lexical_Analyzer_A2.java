@@ -188,7 +188,7 @@ public class Lexical_Analyzer_A2 {
                             else{
                                 break;
                             }
-                        }
+                        }//test
 
                     case 4:    //We have IF
 
