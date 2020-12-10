@@ -14,12 +14,9 @@ public class Lexical_Analyzer_A2 {
     private static int varFlag = 0;
     private static int state = 0;
 
-    public Lexical_Analyzer_A2() throws IOException {
 
-    }
 
-    public static void main(String ...args){
-
+    private static void Lex() {
         try {
             FileWriter myWriter = new FileWriter("First_File.txt");
             FileWriter myWriter2 = new FileWriter("Second_File.txt");
@@ -52,14 +49,14 @@ public class Lexical_Analyzer_A2 {
                         if (Is_RO_found){
                             if(Character.isDigit(character) || Character.isLetter(character)){
                                 Is_RO_found = false;
-                                myWriter.write("( RO, " + myRo + " ), ");
+                                myWriter.write("( RO, " + myRo + " )\n");
                             }
                         }
 
                         if (!Character.isDigit(character)){
 
                             if(Is_Num){
-                                myWriter.write( "(NUM," + mynum + " ), ");
+                                myWriter.write( "(NUM, " + mynum + " )\n");
                                 Is_Num = false;
                                 mynum.setLength(0);
                             }
@@ -142,7 +139,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"i\" ), ");
+                                myWriter.write("(ID, \"i\" )\n");
                                 myWriter2.write("i");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -181,7 +178,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"in\" ), ");
+                                myWriter.write("(ID, \"in\" )\n");
                                 myWriter2.write("in");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -204,7 +201,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( 'IF', ^ ),");
+                                myWriter.write("( 'IF', ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -218,7 +215,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'IF', ^ ),");
+                                myWriter.write("( 'IF', ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -239,7 +236,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( 'ELSE', ^ ),");
+                                myWriter.write("( 'ELSE', ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -253,7 +250,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'ELSE', ^ ),");
+                                myWriter.write("( 'ELSE', ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -274,7 +271,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( WHILE, ^ ),");
+                                myWriter.write("( WHILE, ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -288,7 +285,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'WHILE', ^ ),");
+                                myWriter.write("( 'WHILE', ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -310,7 +307,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( WRITE, ^ ),");
+                                myWriter.write("( WRITE, ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -324,7 +321,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'WRITE', ^ ),");
+                                myWriter.write("( 'WRITE', ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -345,7 +342,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( READ, ^ ), ");
+                                myWriter.write("( READ, ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -359,7 +356,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'READ', ^ ), ");
+                                myWriter.write("( 'READ', ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -379,7 +376,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( 'RET', ^ ),");
+                                myWriter.write("( 'RET', ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -393,7 +390,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'RET', ^ ),");
+                                myWriter.write("( 'RET', ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -431,7 +428,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"e\" ), ");
+                                myWriter.write("(ID, \"e\" )\n");
                                 myWriter2.write("e");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -473,7 +470,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"el\" ), ");
+                                myWriter.write("(ID, \"el\" )\n");
                                 myWriter2.write("el");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -514,7 +511,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"els\" ), ");
+                                myWriter.write("(ID, \"els\" )\n");
                                 myWriter2.write("els");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -559,7 +556,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"w\" ), ");
+                                myWriter.write("(ID, \"w\" )\n");
                                 myWriter2.write("w");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -600,7 +597,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"wh\" ), ");
+                                myWriter.write("(ID, \"wh\" )\n");
                                 myWriter2.write("wh");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -641,7 +638,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"whi\" ), ");
+                                myWriter.write("(ID, \"whi\" )\n");
                                 myWriter2.write("whi");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -682,7 +679,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"whil\" ), ");
+                                myWriter.write("(ID, \"whil\" )\n");
                                 myWriter2.write("whil");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -723,7 +720,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"wr\" ), ");
+                                myWriter.write("(ID, \"wr\" )\n");
                                 myWriter2.write("wr");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -763,7 +760,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"wri\" ), ");
+                                myWriter.write("(ID, \"wri\" )\n");
                                 myWriter2.write("wri");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -804,7 +801,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"writ\" ), ");
+                                myWriter.write("(ID, \"writ\" )\n");
                                 myWriter2.write("writ");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -844,7 +841,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"r\" ), ");
+                                myWriter.write("(ID, \"r\" )\n");
                                 myWriter2.write("r");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -886,7 +883,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"re\" ), ");
+                                myWriter.write("(ID, \"re\" )\n");
                                 myWriter2.write("re");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -927,7 +924,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"rea\" ), ");
+                                myWriter.write("(ID, \"rea\" )\n");
                                 myWriter2.write("rea");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -968,7 +965,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"c\" ), ");
+                                myWriter.write("(ID, \"c\" )\n");
                                 myWriter2.write("c");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -1009,7 +1006,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"ch\" ), ");
+                                myWriter.write("(ID, \"ch\" )\n");
                                 myWriter2.write("ch");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -1050,7 +1047,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("(ID, \"cha\" ), ");
+                                myWriter.write("(ID, \"cha\" )\n");
                                 myWriter2.write("cha");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -1074,7 +1071,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( 'CHAR', ^ ),");
+                                myWriter.write("( 'CHAR', ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -1088,7 +1085,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'CHAR', ^ ),");
+                                myWriter.write("( 'CHAR', ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -1110,7 +1107,7 @@ public class Lexical_Analyzer_A2 {
                         }
                         else{
                             if (Character.isSpaceChar(character)){
-                                myWriter.write("( 'INT', ^ ),");
+                                myWriter.write("(INT, ^ )\n");
                                 myStr.setLength(0);
                                 state = 0;
                             }
@@ -1124,7 +1121,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write("( 'INT', ^ ),");
+                                myWriter.write("(INT, ^ )\n");
                                 myStr.setLength(0);
                                 state = 9000;
                                 Is_Symbol_after_letter = true;
@@ -1150,7 +1147,7 @@ public class Lexical_Analyzer_A2 {
                                 Is_Identifier_after_num = false;
                             }
                             if (Character.isSpaceChar(character)){
-                                myWriter.write( "(ID, \" " + myStr + " \"), ");
+                                myWriter.write( "(ID, \" " + myStr + " \")\n");
                                 myWriter2.write(""+myStr+"");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -1161,7 +1158,7 @@ public class Lexical_Analyzer_A2 {
                             }
                             else{//symbol
                                 //Function for symbols check
-                                myWriter.write( "(ID, \" " + myStr + " \"), ");
+                                myWriter.write( "(ID, \" " + myStr + " \")\n");
                                 myWriter2.write( ""+myStr+"");
                                 myWriter2.write("\n");
                                 myStr.setLength(0);
@@ -1190,71 +1187,71 @@ public class Lexical_Analyzer_A2 {
                             case '(':                                         //Additional operators
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( '(', ^ ), ");
+                                myWriter.write("( '(', ^ )\n");
                                 state = 0;
                                 break;
                             case ')':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( ')', ^ ), ");
+                                myWriter.write("( ')', ^ )\n");
                                 state = 0;
                                 break;
                             case '{':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( '{', ^ ), ");
+                                myWriter.write("( '{', ^ )\n");
                                 state = 0;
                                 break;
                             case '}':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( '}', ^ ), ");
+                                myWriter.write("( '}', ^ )\n");
                                 state = 0;
                                 break;
                             case '[':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( '[', ^ ), ");
+                                myWriter.write("( '[', ^ )\n");
                                 state = 0;
                                 break;
                             case ']':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( ']', ^ ), ");
+                                myWriter.write("( ']', ^ )\n");
                                 state = 0;
                                 break;
                             case ',':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( ',', ^ ), ");
+                                myWriter.write("( ,, ^ )\n");
                                 state = 0;
                                 break;
                             case ';':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( ';', ^ ), ");
+                                myWriter.write("( ';', ^ )\n");
                                 state = 0;
                                 break;
                             case '"':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
                                 myStr.setLength(0);
                                 myStr.append(character);
@@ -1265,7 +1262,7 @@ public class Lexical_Analyzer_A2 {
                                     }
                                     else if (character == '"'){
                                         myStr.append(character);
-                                        myWriter.write("( STRING, "+myStr+"), ");
+                                        myWriter.write("( STRING, "+myStr+")\n");
                                         state = 0;
                                         break;
                                     }
@@ -1276,14 +1273,14 @@ public class Lexical_Analyzer_A2 {
                             case '/':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
                                 myStr.setLength(0);
                                 br2=br;
                                 c2 = br2.read();
                                 character = (char) c2;
                                 if (character == ' '){
-                                    myWriter.write("( '/', ^ ), ");
+                                    myWriter.write("( '/', ^ )\n");
                                 }
                                 else if(character == '*'){
 //                                             myWriter.write("( '/*', ^ )");
@@ -1317,38 +1314,41 @@ public class Lexical_Analyzer_A2 {
                             case '+':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }//Arithmetic operators
-                                myWriter.write("( '+', ^ ), ");
+                                myWriter.write("( '+', ^ )\n");
                                 state = 0;
                                 break;
                             case '-':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( '-', ^ ), ");
+                                myWriter.write("( '-', ^ )\n");
                                 state = 0;
                                 break;
                             case '*':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
-                                myWriter.write("( '*', ^ ), ");
+                                myWriter.write("( '*', ^ )\n");
                                 state = 0;
                                 break;
 
-                            case '<':                                        //Relational Operators
+                            case '<':
 
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
 
-                                    if(Character.compare(myRo, '<') == 0){
-                                        myWriter.write("( '<<', ^), ");
+                                    if (Character.compare(myRo, '=') == 0 ){
+                                        myWriter.write("( RO, LE)\n");
+                                    }
+                                    else if(Character.compare(myRo, '<') == 0){
+                                        myWriter.write("( '>>', ^)\n");
                                     }
                                     else{
-                                        myWriter.write("( SYNTAX ERROR, " + myRo + "<), ");
+                                        myWriter.write("( SYNTAX ERROR, " + myRo + ">)\n");
                                     }
                                 }
                                 else{
@@ -1356,6 +1356,7 @@ public class Lexical_Analyzer_A2 {
                                     myRo = '<';
                                 }
                                 state = 0;
+
                                 break;
 
                             case '>':
@@ -1364,10 +1365,13 @@ public class Lexical_Analyzer_A2 {
                                     Is_RO_found = false;
 
                                     if (Character.compare(myRo, '=') == 0 ){
-                                        myWriter.write("( RO, GE), ");
+                                        myWriter.write("( RO, GE)\n");
+                                    }
+                                    else if(Character.compare(myRo, '>') == 0){
+                                        myWriter.write("( '>>', ^)\n");
                                     }
                                     else{
-                                        myWriter.write("( SYNTAX ERROR, " + myRo + ">), ");
+                                        myWriter.write("( SYNTAX ERROR, " + myRo + ">)\n");
                                     }
                                 }
                                 else{
@@ -1384,19 +1388,19 @@ public class Lexical_Analyzer_A2 {
                                     Is_RO_found = false;
 
                                     if (Character.compare(myRo, '=') == 0 ){
-                                        myWriter.write("( RO, EQ), ");
+                                        myWriter.write("( RO, EQ)\n");
                                     }
                                     else if (Character.compare(myRo, '<') == 0 ){
-                                        myWriter.write("( RO, LE), ");
+                                        myWriter.write("( RO, LE)\n");
                                     }
                                     else if (Character.compare(myRo, '>') == 0 ){
-                                        myWriter.write("( RO, GE), ");
+                                        myWriter.write("( RO, GE)\n");
                                     }
                                     else if (Character.compare(myRo, '!') == 0 ){
-                                        myWriter.write("( RO, NE), ");
+                                        myWriter.write("( RO, NE)\n");
                                     }
                                     else{
-                                        myWriter.write("( SYNTAX ERROR, " + myRo + "=), ");
+                                        myWriter.write("( SYNTAX ERROR, " + myRo + "=)\n");
                                     }
 
                                 }
@@ -1412,7 +1416,7 @@ public class Lexical_Analyzer_A2 {
                                 if( Is_RO_found ){
 
                                     Is_RO_found = false;
-                                    myWriter.write("( SYNTAX ERROR, " + myRo + "!), ");
+                                    myWriter.write("( SYNTAX ERROR, " + myRo + "!)\n");
                                 }
                                 else{
                                     Is_RO_found = true;
@@ -1425,7 +1429,7 @@ public class Lexical_Analyzer_A2 {
                             case '‘':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
                                 myStr.append(character);
                                 c = br.read();
@@ -1434,21 +1438,21 @@ public class Lexical_Analyzer_A2 {
                                 c = br.read();
                                 character = (char) c;
                                 myStr.append(character);
-                                myWriter.write("( 'LC', "+myStr+"), ");
+                                myWriter.write("( 'LC', "+myStr+")\n");
                                 myStr.setLength(0);
                                 state = 0;
                                 break;
                             case ':':
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
                                 if ((c = br.read()) != -1) {
                                     character = (char) c;
                                     if (character == '=') {
-                                        myWriter.write("( ':=', ^ ), ");
+                                        myWriter.write("( ':=', ^ )\n");
                                     } else {
-                                        myWriter.write("( ':', ^ ), ");
+                                        myWriter.write("(:, ^ )\n");
                                     }
                                 }
                                 state = 0;
@@ -1459,7 +1463,7 @@ public class Lexical_Analyzer_A2 {
                             default:
                                 if( Is_RO_found ){
                                     Is_RO_found = false;
-                                    myWriter.write("( RO, " + myRo + " ), ");
+                                    myWriter.write("( RO, " + myRo + " )\n");
                                 }
                                 state = 0;
 //                                           myStr.append(character);
@@ -1526,61 +1530,96 @@ public class Lexical_Analyzer_A2 {
             myWriter.close();
             myWriter2.close();
 
-                    // PrintWriter object for output.txt
-                    PrintWriter pw = new PrintWriter("SecondFile.txt");
+            // PrintWriter object for output.txt
+            PrintWriter pw = new PrintWriter("Symbol.txt");
 
-                    // BufferedReader object for input.txt
-                    BufferedReader br1 = new BufferedReader(new FileReader("Second_File.txt"));
+            // BufferedReader object for input.txt
+            BufferedReader br1 = new BufferedReader(new FileReader("Second_File.txt"));
 
-                    String line1 = br1.readLine();
+            String line1 = br1.readLine();
 
-                    // loop for each line of input.txt
-                    while(line1 != null)
+            // loop for each line of input.txt
+            while(line1 != null)
+            {
+                boolean flag = false;
+
+                // BufferedReader object for output.txt
+                BufferedReader br3 = new BufferedReader(new FileReader("Symbol.txt"));
+
+                String line2 = br3.readLine();
+
+                // loop for each line of output.txt
+                while(line2 != null)
+                {
+
+                    if(line1.equals(line2))
                     {
-                        boolean flag = false;
-
-                        // BufferedReader object for output.txt
-                        BufferedReader br3 = new BufferedReader(new FileReader("SecondFile.txt"));
-
-                        String line2 = br3.readLine();
-
-                        // loop for each line of output.txt
-                        while(line2 != null)
-                        {
-
-                            if(line1.equals(line2))
-                            {
-                                flag = true;
-                                break;
-                            }
-
-                            line2 = br3.readLine();
-
-                        }
-
-                        // if flag = false
-                        // write line of input.txt to output.txt
-                        if(!flag){
-                            pw.println(line1);
-
-                            // flushing is important here
-                            pw.flush();
-                        }
-
-                        line1 = br1.readLine();
-
+                        flag = true;
+                        break;
                     }
 
-                    // closing resources
-                    br1.close();
-                    pw.close();
+                    line2 = br3.readLine();
 
-                    System.out.println("File operation performed successfully");
+                }
+
+                // if flag = false
+                // write line of input.txt to output.txt
+                if(!flag){
+                    pw.println(line1);
+
+                    // flushing is important here
+                    pw.flush();
+                }
+
+                line1 = br1.readLine();
+
+            }
+
+            // closing resources
+            br1.close();
+            pw.close();
+
+            System.out.println("File operation performed successfully");
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-}
 
-//1. File reading (Input mai file aye gi which will contain code for our lex)
+    private static void Parser() throws IOException {
+        Parser parser = new Parser();
+
+        while (!parser.openFile("First_File.txt"))
+        {
+            System.out.println("Files doesn't exist. Please try again!");
+        }
+
+        parser.parse();
+
+        parser.output();
+    }
+
+    private static void Translator() throws IOException {
+        Translator translator = new Translator();
+        if (!translator.openFile("First_File.txt"))
+        {
+            System.out.println("File doesn't exist. Please try again!");
+        }
+
+        if(!translator.translate()) {
+            System.out.println("The code cannot be translated due to semantic errors.");
+            return;
+        }
+        translator.output();
+    }
+
+    public static void main(String ...args) throws IOException {
+
+        //Lex();  //Token lexeme pairs have been made
+
+        //Parser();   //Parser will now parse the Token-Lexeme file
+
+        Translator();    //Translator will now Translate the input
+
+    }
+}
