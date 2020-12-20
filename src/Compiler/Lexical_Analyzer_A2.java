@@ -1608,9 +1608,40 @@ public class Lexical_Analyzer_A2 {
 
         if(!translator.translate()) {
             System.out.println("The code cannot be translated due to semantic errors.");
+
+            translator.output();
             return;
         }
         translator.output();
+    }
+
+    private static void MachineCodeGenerator () throws IOException {
+        MachineCodeGenerator machineCodeGenerator = new MachineCodeGenerator();
+
+        if (!machineCodeGenerator.readSymbolTable("translator-symboltable.txt"))
+        {
+            System.out.println("File doesn't exist. Please try again!");
+        }
+        if (!machineCodeGenerator.openFile("tac.txt"))
+        {
+            System.out.println("File doesn't exist. Please try again!");
+        }
+        machineCodeGenerator.generate();
+        machineCodeGenerator.output();
+    }
+
+    private static void VirtualMachine () {
+        VirtualMachine virtualMachine = new VirtualMachine();
+
+        if (!virtualMachine.readMachineCode("machine-code.txt")) {
+            System.out.println("File doesn't exist. Please try again!");
+        }
+
+        if (!virtualMachine.readSymbolTable("translator-symboltable.txt")) {
+            System.out.println("File doesn't exist. Please try again!");
+        }
+
+        virtualMachine.execute();
     }
 
     public static void main(String ...args) throws IOException {
@@ -1619,7 +1650,10 @@ public class Lexical_Analyzer_A2 {
 
         //Parser();   //Parser will now parse the Token-Lexeme file
 
-        Translator();    //Translator will now Translate the input
+        //Translator();    //Translator will now Translate the input
 
+        MachineCodeGenerator();     //MachineCodeGenerator will now generate machine code
+
+        VirtualMachine();       //VirtualMachine will now run the machine code
     }
 }

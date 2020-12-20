@@ -1,4 +1,4 @@
-int: in (int: num, int: length)
+int: numPrint (int: num, int: length)
 {
 int : i, j, first, temp;
 char : a;
@@ -12,7 +12,7 @@ while (i > 0)
 first:= 0; /*this line contains a comment*/
 write( j);
 j := j + 1;
-j <-1;
+j := 1;
 /* this is a comment */
 i:= i - 1;
 /*This is a

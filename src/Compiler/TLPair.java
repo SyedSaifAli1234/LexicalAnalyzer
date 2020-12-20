@@ -11,16 +11,18 @@ public class TLPair {
 	}
 	
     public String toString() {
-        return "(" + token + ", " + lexeme + ")";
-    }
+
+	    return "(" + token + ", " + lexeme + ")";
+
+	}
 
     public String getLexeme()
     {
-    	return lexeme;
+        return lexeme;
     }
     
     public String getToken()
     {
-    	return token;
+        return token;
     }
 }
